@@ -1,4 +1,4 @@
-const body = document.body;
+const circle = document.querySelector(".circle");
 const btn = document.querySelector("#btn");
 const colors = [
   "#ef5777",
@@ -24,7 +24,10 @@ const colors = [
 function changeBgGradient(event) {
   const color1 = Math.floor(Math.random() * colors.length);
   const color2 = Math.floor(Math.random() * colors.length);
-  body.style.backgroundImage = `linear-gradient(to right, ${colors[color1]}, ${colors[color2]})`;
+  if (color1 === color2) {
+    return changeBgGradient();
+  }
+  circle.style.backgroundImage = `linear-gradient(to right, ${colors[color1]}, ${colors[color2]})`;
 }
 
 btn.addEventListener("click", changeBgGradient);
