@@ -27,7 +27,7 @@ function changeBgGradient(event) {
   if (color1 === color2) {
     return changeBgGradient();
   }
-  circle.style.backgroundImage = `linear-gradient(to right, ${colors[color1]}, ${colors[color2]})`;
+  circle.style.backgroundImage = `linear-gradient(60deg, ${colors[color1]}, ${colors[color2]})`;
 }
 
 btn.addEventListener("click", changeBgGradient);
