@@ -1,33 +1,20 @@
 const circle = document.querySelector(".circle");
 const btn = document.querySelector("#btn");
-const colors = [
-  "#ef5777",
-  "#575fcf",
-  "#4bcffa",
-  "#34e7e4",
-  "#0be881",
-  "#f53b57",
-  "#3c40c6",
-  "#0fbcf9",
-  "#00d8d6",
-  "#05c46b",
-  "#ffc048",
-  "#ffdd59",
-  "#ff5e57",
-  "#d2dae2",
-  "#485460",
-  "#ffa801",
-  "#ffd32a",
-  "#ff3f34",
-];
 
 function changeBgGradient(event) {
-  const color1 = Math.floor(Math.random() * colors.length);
-  const color2 = Math.floor(Math.random() * colors.length);
-  if (color1 === color2) {
+  let colors = [];
+  for (let i = 0; i < 9; i++) {
+    colors.push(Math.floor(Math.random() * 256));
+  }
+
+  const color1 = [colors[0], colors[1], colors[2]];
+  const color2 = [colors[3], colors[4], colors[5]];
+  const color3 = [colors[6], colors[7], colors[8]];
+
+  if (color1 === color2 || color2 === color3 || color3 === color1) {
     return changeBgGradient();
   }
-  circle.style.backgroundImage = `linear-gradient(60deg, ${colors[color1]}, ${colors[color2]})`;
+  circle.style.background = `linear-gradient(60deg, rgb(${color1[0]},${color1[1]},${color1[2]}), rgb(${color2[0]},${color2[1]},${color2[2]}), rgb(${color3[0]},${color3[1]},${color3[2]}))`;
 }
 
 btn.addEventListener("click", changeBgGradient);
