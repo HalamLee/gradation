@@ -12,9 +12,6 @@ function handleModeClick() {
   if (filling === true) {
     btn.innerText = "Change the color";
     circleWrapper.classList.remove("before-choice-wrapper");
-    // colorCircle1.style.background = `rgb(${color1[0]},${color1[1]},${color1[2]})`;
-    // colorCircle2.style.background = "rgb(253,82,33)";
-    // colorCircle3.style.background = `((rgb(${color3[0]},${color3[1]},${color3[2]}))`;
   }
 }
 
@@ -27,11 +24,12 @@ function changeBgGradient(event) {
   const color1 = [colors[0], colors[1], colors[2]];
   const color2 = [colors[3], colors[4], colors[5]];
   const color3 = [colors[6], colors[7], colors[8]];
+  const deg = Math.floor(Math.random() * 180);
 
   if (color1 === color2 || color2 === color3 || color3 === color1) {
     return changeBgGradient();
   }
-  circle.style.background = `linear-gradient(60deg, rgb(${color1[0]},${color1[1]},${color1[2]}), rgb(${color2[0]},${color2[1]},${color2[2]}), rgb(${color3[0]},${color3[1]},${color3[2]}))`;
+  circle.style.background = `linear-gradient(${deg}deg, rgb(${color1[0]},${color1[1]},${color1[2]}), rgb(${color2[0]},${color2[1]},${color2[2]}), rgb(${color3[0]},${color3[1]},${color3[2]}))`;
   colorCircle1.style.background = `rgb(${color1[0]},${color1[1]},${color1[2]})`;
   colorCircle2.style.background = `rgb(${color2[0]},${color2[1]},${color2[2]})`;
   colorCircle3.style.background = `rgb(${color3[0]},${color3[1]},${color3[2]})`;
