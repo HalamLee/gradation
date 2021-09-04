@@ -1,23 +1,53 @@
 body {
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   padding: 0;
   margin: 0;
 }
 
-.circle {
-  width: 500px;
-  height: 500px;
+.circle-wrapper {
+  width: 100%;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid black;
+}
+
+.before-choice-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.circle {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid black;
   border-radius: 50%;
 }
 
 .btnClass {
   width: 150px;
 }
+
+.colors-circle {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.color-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid black;
+}
+
+/* .before-choice-color {
+  display: none;
+} */

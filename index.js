@@ -1,5 +1,22 @@
 const circle = document.querySelector(".circle");
 const btn = document.querySelector("#btn");
+const circleWrapper = document.querySelector(".circle-wrapper");
+const colorsCircle = document.querySelector(".colors-circle");
+const colorCircle1 = document.querySelector(".color-circle:first-child");
+const colorCircle2 = document.querySelector(".color-circle:nth-child(2)");
+const colorCircle3 = document.querySelector(".color-circle:last-child");
+
+let filling = false;
+
+function handleModeClick() {
+  if (filling === true) {
+    btn.innerText = "Change the color";
+    circleWrapper.classList.remove("before-choice-wrapper");
+    // colorCircle1.style.background = `rgb(${color1[0]},${color1[1]},${color1[2]})`;
+    // colorCircle2.style.background = "rgb(253,82,33)";
+    // colorCircle3.style.background = `((rgb(${color3[0]},${color3[1]},${color3[2]}))`;
+  }
+}
 
 function changeBgGradient(event) {
   let colors = [];
@@ -15,6 +32,11 @@ function changeBgGradient(event) {
     return changeBgGradient();
   }
   circle.style.background = `linear-gradient(60deg, rgb(${color1[0]},${color1[1]},${color1[2]}), rgb(${color2[0]},${color2[1]},${color2[2]}), rgb(${color3[0]},${color3[1]},${color3[2]}))`;
+  colorCircle1.style.background = `rgb(${color1[0]},${color1[1]},${color1[2]})`;
+  colorCircle2.style.background = `rgb(${color2[0]},${color2[1]},${color2[2]})`;
+  colorCircle3.style.background = `rgb(${color3[0]},${color3[1]},${color3[2]})`;
+  filling = true;
+  handleModeClick();
 }
 
 btn.addEventListener("click", changeBgGradient);
