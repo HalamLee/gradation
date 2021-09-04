@@ -73,4 +73,9 @@ body {
     height: 50px;
     border: 4px solid black;
   }
+
+  #btn {
+    font-size: 13px;
+    padding: 8px;
+  }
 }
