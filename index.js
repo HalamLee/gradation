@@ -11,6 +11,7 @@ let filling = false;
 function handleModeClick() {
   if (filling === true) {
     btn.innerText = "Change the color";
+    btn.style.border = "none";
     circleWrapper.classList.remove("before-choice-wrapper");
   }
 }
